@@ -53,6 +53,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4080420251103001",
     "@dcloudio/uni-mp-xhs": "3.0.0-4080420251103001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4080420251103001",
+    "@qiun/ucharts": "^2.5.0-20230101",
     "pinia": "^3.0.4",
     "ucharts": "^0.0.0",
     "uview-plus": "^3.8.37",
@@ -61,7 +62,9 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testMatch": ["**/tests/**/*.test.js"]
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
   },
   "devDependencies": {
     "@dcloudio/types": "^3.4.8",

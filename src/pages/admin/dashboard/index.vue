@@ -15,28 +15,34 @@
         </view>
       </view>
 
-      <!-- 施工趋势折线图 -->
+      <!-- 施工趋势（文字列表）
+           TODO: 替换为图表 - 在 HBuilderX 插件市场安装 qiun-data-charts，
+           然后用 <qiun-data-charts type="line" :chartData="lineData" /> 替换此块 -->
       <view class="chart-card">
         <text class="chart-title">施工趋势（近6个月）</text>
         <view v-if="data.trend.length === 0" class="empty-tip">暂无数据</view>
-        <qiun-data-charts
-          v-else
-          type="line"
-          :opts="lineOpts"
-          :chartData="lineData"
-        />
+        <view v-else class="trend-list">
+          <view v-for="t in data.trend" :key="t.month" class="trend-item">
+            <text class="trend-month">{{ t.month }}</text>
+            <view class="trend-bar-wrap">
+              <view class="trend-bar" :style="{ width: (t.count / maxTrend * 100) + '%' }" />
+            </view>
+            <text class="trend-count">{{ t.count }}</text>
+          </view>
+        </view>
       </view>
 
-      <!-- 产品占比饼图 -->
+      <!-- 产品占比（文字列表）
+           TODO: 替换为图表 - 安装 qiun-data-charts 后用 <qiun-data-charts type="pie" :chartData="pieData" /> 替换 -->
       <view class="chart-card">
         <text class="chart-title">产品销量占比</text>
         <view v-if="data.product_distribution.length === 0" class="empty-tip">暂无数据</view>
-        <qiun-data-charts
-          v-else
-          type="pie"
-          :opts="pieOpts"
-          :chartData="pieData"
-        />
+        <view v-else class="dist-list">
+          <view v-for="p in data.product_distribution" :key="p.name" class="dist-item">
+            <text class="dist-name">{{ p.name }}</text>
+            <text class="dist-value">{{ p.value }} 件</text>
+          </view>
+        </view>
       </view>
 
       <!-- 到期预警 -->
@@ -113,6 +119,8 @@ const lineOpts = {
 const pieOpts = {
   legend: { show: true, position: 'bottom', lineHeight: 25 },
 }
+
+const maxTrend = computed(() => Math.max(...data.value.trend.map(t => t.count), 1))
 </script>
 
 <style scoped>
@@ -139,4 +147,15 @@ const pieOpts = {
 .alert-date { font-size: 26rpx; color: #FA8C16; white-space: nowrap; margin-left: 16rpx; }
 .empty-tip { font-size: 26rpx; color: #999; text-align: center; padding: 32rpx 0; display: block; }
 .center { display: flex; justify-content: center; padding: 80rpx 0; }
+.trend-list { display: flex; flex-direction: column; gap: 16rpx; }
+.trend-item { display: flex; align-items: center; gap: 16rpx; }
+.trend-month { font-size: 24rpx; color: #666; width: 80rpx; flex-shrink: 0; }
+.trend-bar-wrap { flex: 1; height: 24rpx; background: #F0F4FF; border-radius: 12rpx; overflow: hidden; }
+.trend-bar { height: 100%; background: #2B7EFF; border-radius: 12rpx; min-width: 4rpx; }
+.trend-count { font-size: 24rpx; color: #333; width: 48rpx; text-align: right; flex-shrink: 0; }
+.dist-list { display: flex; flex-direction: column; gap: 12rpx; }
+.dist-item { display: flex; justify-content: space-between; align-items: center; padding: 12rpx 0; border-bottom: 1rpx solid #f5f5f5; }
+.dist-item:last-child { border-bottom: none; }
+.dist-name { font-size: 28rpx; color: #333; }
+.dist-value { font-size: 26rpx; color: #2B7EFF; font-weight: bold; }
 </style>
