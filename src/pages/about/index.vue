@@ -39,7 +39,10 @@
 </template>
 
 <script setup lang="ts">
+import { onShow } from '@dcloudio/uni-app'
 import AppTabBar from '@/components/AppTabBar/index.vue'
+
+onShow(() => { uni.hideTabBar({ animation: false }) })
 const infos = [
   { icon: 'map-pin', label: '门店地址', value: '请填写门店地址' },
   { icon: 'clock',   label: '营业时间', value: '09:00 – 20:00（全年无休）' },
@@ -64,6 +67,8 @@ function callUs() {
   flex-direction: column;
   align-items: center;
   padding: 80rpx 40rpx 56rpx;
+  background: linear-gradient(180deg, #112240 0%, #0A1628 80%);
+  border-bottom: 1rpx solid rgba(201, 168, 76, 0.15);
 }
 .brand-logo {
   width: 160rpx;
@@ -86,11 +91,12 @@ function callUs() {
 
 /* Info Card */
 .info-card {
-  background: #112240;
+  background: linear-gradient(135deg, #13243d 0%, #0f1d31 100%);
   border: 1rpx solid rgba(201, 168, 76, 0.25);
   border-radius: 24rpx;
   padding: 8rpx 32rpx;
   margin-bottom: 24rpx;
+  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.35), inset 0 1rpx 0 rgba(201, 168, 76, 0.12);
 }
 .info-item {
   display: flex;
@@ -124,11 +130,12 @@ function callUs() {
 
 /* Intro Card */
 .intro-card {
-  background: #112240;
+  background: linear-gradient(135deg, #13243d 0%, #0f1d31 100%);
   border: 1rpx solid rgba(201, 168, 76, 0.25);
   border-radius: 24rpx;
   padding: 36rpx 32rpx;
   margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.35), inset 0 1rpx 0 rgba(201, 168, 76, 0.12);
 }
 .intro-title {
   display: block;

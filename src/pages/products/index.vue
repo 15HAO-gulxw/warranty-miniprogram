@@ -30,7 +30,10 @@
 </template>
 
 <script setup lang="ts">
+import { onShow } from '@dcloudio/uni-app'
 import AppTabBar from '@/components/AppTabBar/index.vue'
+
+onShow(() => { uni.hideTabBar({ animation: false }) })
 const products = [
   {
     title: '漆面保护膜 PPF',
@@ -88,20 +91,22 @@ function goAbout() {
 }
 
 .product-card {
-  background: #112240;
+  background: linear-gradient(135deg, #13243d 0%, #0f1d31 100%);
   border: 1rpx solid rgba(201, 168, 76, 0.25);
   border-radius: 24rpx;
   padding: 40rpx 32rpx;
   display: flex;
   align-items: flex-start;
   gap: 28rpx;
+  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.35), inset 0 1rpx 0 rgba(201, 168, 76, 0.12);
 }
 
 .prod-icon-wrap {
   width: 96rpx;
   height: 96rpx;
   border-radius: 20rpx;
-  background: rgba(201, 168, 76, 0.1);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.18), rgba(201, 168, 76, 0.06));
+  border: 1rpx solid rgba(201, 168, 76, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,13 +138,14 @@ function goAbout() {
 
 .cta-section {
   margin-top: 48rpx;
-  background: #112240;
+  background: linear-gradient(135deg, #13243d 0%, #0f1d31 100%);
   border: 1rpx solid rgba(201, 168, 76, 0.25);
   border-radius: 24rpx;
   padding: 40rpx 32rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.35), inset 0 1rpx 0 rgba(201, 168, 76, 0.12);
 }
 .cta-label {
   font-size: 28rpx;

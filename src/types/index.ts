@@ -1,6 +1,8 @@
 export interface WarrantyRecord {
   _id?: string
   warranty_no: string
+  store_name?: string
+  store_phone?: string
   owner_name: string
   owner_phone: string
   license_plate: string
