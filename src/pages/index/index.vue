@@ -15,7 +15,7 @@
       <view class="action-card" @tap="goWarrantyEntry">
         <view class="card-left">
           <view class="card-icon-wrap">
-            <u-icon name="shield-checkmark" size="52" color="#C9A84C" />
+            <u-icon name="checkmark-circle-fill" size="52" color="#C9A84C" />
           </view>
           <view class="card-info">
             <text class="card-title">质保录入</text>

@@ -29,5 +29,11 @@
     "navigationBarBackgroundColor": "#0A1628",
     "navigationBarTextStyle": "white",
     "backgroundColor": "#0A1628"
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^AppTabBar$": "@/components/AppTabBar/index.vue"
+    }
   }
 }

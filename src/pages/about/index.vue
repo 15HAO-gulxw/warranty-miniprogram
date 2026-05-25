@@ -44,7 +44,7 @@ import AppTabBar from '@/components/AppTabBar/index.vue'
 
 onShow(() => { uni.hideTabBar({ animation: false }) })
 const infos = [
-  { icon: 'map-pin', label: '门店地址', value: '请填写门店地址' },
+  { icon: 'map',     label: '门店地址', value: '请填写门店地址' },
   { icon: 'clock',   label: '营业时间', value: '09:00 – 20:00（全年无休）' },
   { icon: 'phone',   label: '联系电话', value: '请填写联系电话' },
 ]

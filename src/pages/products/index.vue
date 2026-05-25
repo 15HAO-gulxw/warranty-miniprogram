@@ -38,19 +38,19 @@ const products = [
   {
     title: '漆面保护膜 PPF',
     badge: '热销推荐',
-    icon: 'shield',
+    icon: 'lock',
     desc: '军工级抗冲击材料，自修复技术，抵御石击、划痕与酸性污染，让漆面历久如新。',
   },
   {
     title: '汽车改色膜',
     badge: '个性定制',
-    icon: 'palette',
+    icon: 'tags-fill',
     desc: '进口哑光/光面膜料，色彩多样，整车改色或局部点缀，施工可逆无损原厂漆面。',
   },
   {
     title: '车窗隔热膜',
     badge: '节能舒适',
-    icon: 'sun',
+    icon: 'eye',
     desc: '高透光、高隔热，阻隔 99% 紫外线，大幅降低车内温度，保护乘员与内饰。',
   },
 ]

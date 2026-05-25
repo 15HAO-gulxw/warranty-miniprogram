@@ -23,7 +23,7 @@
 defineProps<{ current: number }>()
 
 const tabs = [
-  { text: '质保',    icon: 'shield-checkmark', path: '/pages/index/index' },
+  { text: '质保',    icon: 'checkmark-circle', path: '/pages/index/index' },
   { text: '产品',    icon: 'star',             path: '/pages/products/index' },
   { text: '关于我们', icon: 'account',          path: '/pages/about/index' },
 ]

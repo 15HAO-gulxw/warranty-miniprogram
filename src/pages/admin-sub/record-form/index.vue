@@ -137,7 +137,7 @@
       </view>
       <view class="upload-row" @tap="chooseImages('product')">
         <view class="upload-left">
-          <u-icon name="image" size="44" color="#C9A84C" />
+          <u-icon name="photo" size="44" color="#C9A84C" />
           <text class="upload-hint">{{ form.product_images.length ? `已选 ${form.product_images.length} 张` : '点击选择图片' }}</text>
         </view>
         <text class="upload-action">{{ form.product_images.length ? '重新上传' : '上传' }}</text>
@@ -152,7 +152,7 @@
       </view>
       <view class="upload-row" @tap="chooseImages('construction')">
         <view class="upload-left">
-          <u-icon name="image" size="44" color="#C9A84C" />
+          <u-icon name="photo" size="44" color="#C9A84C" />
           <text class="upload-hint">{{ form.construction_images.length ? `已选 ${form.construction_images.length} 张` : '点击选择图片' }}</text>
         </view>
         <text class="upload-action">{{ form.construction_images.length ? '重新上传' : '上传' }}</text>
