@@ -1,52 +1,33 @@
 {
   "pages": [
-    {
-      "path": "pages/index/index",
-      "style": { "navigationBarTitleText": "质保查询" }
-    },
-    {
-      "path": "pages/query-result/index",
-      "style": { "navigationBarTitleText": "质保详情" }
-    },
-    {
-      "path": "pages/login/index",
-      "style": { "navigationBarTitleText": "管理员登录" }
-    },
-    {
-      "path": "pages/admin/dashboard/index",
-      "style": { "navigationBarTitleText": "数据看板" }
-    },
-    {
-      "path": "pages/admin/record-list/index",
-      "style": { "navigationBarTitleText": "质保记录" }
-    },
-    {
-      "path": "pages/admin/profile/index",
-      "style": { "navigationBarTitleText": "我的" }
-    }
+    { "path": "pages/index/index",        "style": { "navigationStyle": "custom" } },
+    { "path": "pages/query-result/index", "style": { "navigationBarTitleText": "质保查询", "navigationBarBackgroundColor": "#0A1628", "navigationBarTextStyle": "white" } },
+    { "path": "pages/products/index",     "style": { "navigationBarTitleText": "产品中心", "navigationBarBackgroundColor": "#0A1628", "navigationBarTextStyle": "white" } },
+    { "path": "pages/about/index",        "style": { "navigationBarTitleText": "关于我们", "navigationBarBackgroundColor": "#0A1628", "navigationBarTextStyle": "white" } }
   ],
   "subPackages": [
     {
       "root": "pages/admin-sub",
       "pages": [
-        { "path": "record-form/index", "style": { "navigationBarTitleText": "录入记录" } },
-        { "path": "record-detail/index", "style": { "navigationBarTitleText": "记录详情" } }
+        { "path": "record-form/index",   "style": { "navigationBarTitleText": "质保录入", "navigationBarBackgroundColor": "#0A1628", "navigationBarTextStyle": "white" } },
+        { "path": "record-detail/index", "style": { "navigationBarTitleText": "记录详情", "navigationBarBackgroundColor": "#0A1628", "navigationBarTextStyle": "white" } }
       ]
     }
   ],
   "tabBar": {
-    "color": "#999",
-    "selectedColor": "#2B7EFF",
+    "color": "#606880",
+    "selectedColor": "#C9A84C",
+    "backgroundColor": "#0A1628",
+    "borderStyle": "black",
     "list": [
-      { "pagePath": "pages/index/index", "text": "质保查询" },
-      { "pagePath": "pages/admin/dashboard/index", "text": "看板" },
-      { "pagePath": "pages/admin/record-list/index", "text": "记录" },
-      { "pagePath": "pages/admin/profile/index", "text": "我的" }
+      { "pagePath": "pages/index/index",    "text": "质保" },
+      { "pagePath": "pages/products/index", "text": "产品" },
+      { "pagePath": "pages/about/index",    "text": "关于我们" }
     ]
   },
   "globalStyle": {
-    "navigationBarBackgroundColor": "#2B7EFF",
+    "navigationBarBackgroundColor": "#0A1628",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#F5F6FA"
+    "backgroundColor": "#0A1628"
   }
 }
