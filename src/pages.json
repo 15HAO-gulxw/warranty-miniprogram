@@ -27,7 +27,7 @@
   ],
   "subPackages": [
     {
-      "root": "pages/admin",
+      "root": "pages/admin-sub",
       "pages": [
         { "path": "record-form/index", "style": { "navigationBarTitleText": "录入记录" } },
         { "path": "record-detail/index", "style": { "navigationBarTitleText": "记录详情" } }
