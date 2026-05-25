@@ -14,13 +14,13 @@ async function generateWarrantyNo() {
 
 exports.main = async (event, context) => {
   const { OPENID } = cloud.getWXContext()
-  const { data: admins } = await db.collection('admins').where({ openid: OPENID }).get()
-  if (admins.length === 0) return { code: 403, message: '无权限' }
-
   const record = event.record
   if (!record) return { code: 400, message: '缺少记录数据' }
 
   try {
+    const { data: admins } = await db.collection('admins').where({ openid: OPENID }).get()
+    if (admins.length === 0) return { code: 403, message: '无权限' }
+
     const warrantyNo = await generateWarrantyNo()
     const constructDate = new Date(record.construction_date)
     constructDate.setFullYear(constructDate.getFullYear() + record.warranty_years)

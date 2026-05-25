@@ -21,9 +21,9 @@ exports.main = async (event) => {
       return { code: 404, message: '未找到质保记录' }
     }
 
+    const now = new Date()
     const masked = data.map(record => {
       const { owner_phone, ...rest } = record
-      const now = new Date()
       const expire = new Date(record.warranty_expire)
       const diffDays = Math.ceil((expire - now) / (1000 * 60 * 60 * 24))
       let status = 'valid'

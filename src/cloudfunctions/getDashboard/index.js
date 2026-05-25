@@ -4,15 +4,16 @@ const db = cloud.database()
 
 exports.main = async (event, context) => {
   const { OPENID } = cloud.getWXContext()
-  const { data: admins } = await db.collection('admins').where({ openid: OPENID }).get()
-  if (admins.length === 0) return { code: 403, message: '无权限' }
-
-  const now = new Date()
-  const thisMonthStart = new Date(now.getFullYear(), now.getMonth(), 1)
-  const thirtyDaysLater = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
-  const sixMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 5, 1)
 
   try {
+    const { data: admins } = await db.collection('admins').where({ openid: OPENID }).get()
+    if (admins.length === 0) return { code: 403, message: '无权限' }
+
+    const now = new Date()
+    const thisMonthStart = new Date(now.getFullYear(), now.getMonth(), 1)
+    const thirtyDaysLater = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+    const sixMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 6, 1)
+
     const [totalRes, monthlyRes, allRecentRes, expiringRes] = await Promise.all([
       db.collection('records').count(),
       db.collection('records').where({ created_at: db.command.gte(thisMonthStart) }).count(),
