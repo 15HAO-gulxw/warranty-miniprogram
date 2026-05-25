@@ -44,6 +44,9 @@
       { "pagePath": "pages/admin/profile/index", "text": "我的" }
     ]
   },
+  "easycom": {
+    "^qiun-data-charts": "ucharts/qiun-data-charts/qiun-data-charts.vue"
+  },
   "globalStyle": {
     "navigationBarBackgroundColor": "#2B7EFF",
     "navigationBarTextStyle": "white",
