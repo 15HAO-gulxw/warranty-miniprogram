@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
 onLaunch(() => {
+  wx.cloud.init({
+    env: 'your-cloud-env-id',
+    traceUser: true,
+  })
 });
 onShow(() => {
 });

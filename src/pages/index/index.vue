@@ -2,7 +2,6 @@
   <view class="page">
     <!-- 沉浸式 Banner -->
     <view class="banner">
-      <image class="banner-img" src="/static/banner.jpg" mode="aspectFill" />
       <view class="banner-overlay" />
       <view class="banner-text">
         <text class="brand-sub">PREMIUM CAR FILM &amp; WRAP</text>
@@ -129,7 +128,6 @@ async function doLogin() {
   overflow: hidden;
   background: linear-gradient(135deg, #0A1628 0%, #1A2D50 60%, #0A1628 100%);
 }
-.banner-img { width: 100%; height: 100%; }
 .banner-overlay {
   position: absolute;
   inset: 0;
