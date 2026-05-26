@@ -2,7 +2,7 @@
 import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
 onLaunch(() => {
   wx.cloud.init({
-    env: 'your-cloud-env-id',
+    env: 'cloud1-d5griemwed33927c3',
     traceUser: true,
   })
 });
